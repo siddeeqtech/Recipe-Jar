@@ -27,23 +27,30 @@ struct ContentView: View {
     @State var presentAddFolder = false
     @State var folderName = ""
     @State var folders = CodeExtensions.sharedDefault.array(forKey: "folders") as? [String] ?? [String]()
+    
+    //Recipe Video
+    
+    let videoURL =  URL(string: "https://www.youtube.com/watch?v=QV4_kVIf4V4&ab_channel=iOSAcademy")!
+
+    
+    
     var body: some View {
         
         
         NavigationView {
-                   
-            
-           
-            
-            
             VStack {
               
                 NavigationLink{
                     StepsScreen()
                 }label: {
-                    Text("go to steps")
+                    Text("Steps")
                 }
-                
+                NavigationLink{
+                    
+                    YouTubeView(youTubePlayer: "https://www.youtube.com/watch?v=QV4_kVIf4V4&ab_channel=iOSAcademy")
+                }label: {
+                    Text("YouTube")
+                }
                 NavigationLink(destination: ScanRecipeView()) {
                     Text("Scan Recipe")
                 }
@@ -101,21 +108,8 @@ struct ContentView: View {
                 
             }
             
-            
-            
-            
-            
-            
                }
-        
-       
-       
-        
-        
-        
-        
-        
-        
+          
         .alert(errorTitle, isPresented: $showingError) {
             Button("OK",role: .cancel) {}
         } message: {

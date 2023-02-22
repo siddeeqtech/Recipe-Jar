@@ -23,9 +23,14 @@ struct StepsScreen: View {
     @State private var showPopover = false//for ingredients button
     
     
-    @State var ingredients = [Ingredient(title: "Ingredient 1",order:-1),Ingredient(title: "Ingredient 2",order:-1),Ingredient(title: "Ingredient 3",order:-1),Ingredient(title: "Ingredient 4",order:-1),Ingredient(title: "Ingredient 5",order:-1),Ingredient(title: "Ingredient 6",order:-1)]//delete later
 
-    @State var steps = [Step(title: "Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food StudiosHeat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food Studios", order: 1),Step(title: "Your pancake will tell you when it's ready to flip. Wait until bubbles start to form on the top and the edges look dry and set. This will usually take about two to three minutes on each side", order: 2),Step(title: "Make a well", order: 3),Step(title: "Store leftover pancakes in an airtight container in the fridge for about a week. Refrain from adding toppings (such as syrup) until right before you serve them so the pancakes don't get soggy.", order: 4)]//delete later
+    @State var ingredients = [Ingredient(name:"Ingredient 1",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 2",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 3",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 4",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 5",order:-1, quantity: -1, unit: "no unit")]//delete later
+  
+    
+    
+
+    
+    @State var steps = [Step(name: "Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food StudiosHeat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food Studios", order: 1),Step(name: "Your pancake will tell you when it's ready to flip. Wait until bubbles start to form on the top and the edges look dry and set. This will usually take about two to three minutes on each side", order: 2),Step(name: "Make a well", order: 3),Step(name: "Store leftover pancakes in an airtight container in the fridge for about a week. Refrain from adding toppings (such as syrup) until right before you serve them so the pancakes don't get soggy.", order: 4)]//delete later
     
     
    // @State step = Step
@@ -98,13 +103,13 @@ struct StepsScreen: View {
                         .iOSPopover(isPresented: $showPopover, arrowDirection: .up) {
                           // ViewThatFits{
                                 List{
-                                    ForEach(ingredients,id: \.title) { ingredient in
+                                    ForEach(ingredients,id: \.name) { ingredient in
                                         HStack{
                                             Image(systemName: "star.fill")
                                                 .foregroundColor(.yellow)
                                                 .imageScale(.small)
                                             
-                                            Text(ingredient.title)
+                                            Text(ingredient.name)
                                         }
                                     }
                                     .listRowSeparator(.hidden)

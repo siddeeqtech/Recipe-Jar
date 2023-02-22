@@ -4,23 +4,29 @@ import UIKit
 
 
 
-struct RecipeDetailsScreen: View {
+struct RecipeShareSheetScreen: View {
     var dismiss: (() -> Void)?
-    //@StateObject private var vm = RecipeViewModelImpl(service: RecipeServiceImpl())
+    @StateObject private var vm = RecipeViewModelImpl(service: RecipeServiceImpl())
     
     @ObservedObject var model: EnvObject
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>//To Dismiss SwiftUI ShareSheet
 
     @State var isPresented = false
 
-    @State var ingredients = [Ingredient(title: "Ingredient 1",order:-1),Ingredient(title: "Ingredient 2",order:-1),Ingredient(title: "Ingredient 3",order:-1),Ingredient(title: "Ingredient 4",order:-1),Ingredient(title: "Ingredient 5",order:-1),Ingredient(title: "Ingredient 6",order:-1)]//delete later
-    @State var steps = [Step(title: "Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food StudiosHeat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food Studios", order: 1),Step(title: "Your pancake will tell you when it's ready to flip. Wait until bubbles start to form on the top and the edges look dry and set. This will usually take about two to three minutes on each side", order: 2),Step(title: "Make a well", order: 3),Step(title: "Store leftover pancakes in an airtight container in the fridge for about a week. Refrain from adding toppings (such as syrup) until right before you serve them so the pancakes don't get soggy.", order: 4)]//delete later
+    @State var ingredients = [Ingredient(name:"Ingredient 1",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 2",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 3",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 4",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 5",order:-1, quantity: -1, unit: "no unit")]//delete later
+  
+    
+    
+
+    
+    @State var steps = [Step(name: "Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food StudiosHeat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food Studios", order: 1),Step(name: "Your pancake will tell you when it's ready to flip. Wait until bubbles start to form on the top and the edges look dry and set. This will usually take about two to three minutes on each side", order: 2),Step(name: "Make a well", order: 3),Step(name: "Store leftover pancakes in an airtight container in the fridge for about a week. Refrain from adding toppings (such as syrup) until right before you serve them so the pancakes don't get soggy.", order: 4)]//delete later
     
     @State var folders = CodeExtensions.sharedDefault.array(forKey: "folders") as? [String] ?? ["folders are empty in web extension"]
     @State var nar = ""
     var body: some View {
         NavigationView {
              ZStack{//main zstack
+                 
                    VStack(spacing: 0){
                     //MARK: Recipe image
                     VStack(spacing:0){
@@ -30,7 +36,9 @@ struct RecipeDetailsScreen: View {
   
                        //MARK: Recipe Title
                     HStack(spacing: 0){
-                        Text("Good Old-Fashioned Pancakes")
+                       // Text("\(vm.recipeTitle)")
+                        Text(model.recipeURL)
+                        
                         //.fontWeight(.thin)
                             .font(Font.custom("FiraSans-Medium", size: 20))
                             .foregroundColor(CustomColor.navy)
@@ -95,11 +103,18 @@ struct RecipeDetailsScreen: View {
        }
                 .navigationTitle("Edit Recipe")
                 .navigationBarTitleDisplayMode(.inline)
+            
+                .task{
+                     await vm.getRecipeTitle()
+                   // print("fml \(s)")
+                }
       
         }
         .onDisappear(){//in case sharesheet was swiped down instead of of clicking on canel
             model.cancelAction()//call cancel in UIKit(CustomShareSheet) to tell safari extension we are done
         }
+        
+        
 
     }
     
@@ -109,7 +124,7 @@ struct RecipeDetailsScreen: View {
 
 struct RecipeDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeDetailsScreen( model: EnvObject(myvar: ""))
+        RecipeShareSheetScreen( model: EnvObject())
 
     }
 }

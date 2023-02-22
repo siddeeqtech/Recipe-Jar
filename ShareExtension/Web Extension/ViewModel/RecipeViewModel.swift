@@ -16,7 +16,7 @@ final class RecipeViewModelImpl: RecipeViewModel {
     //@published to listen for the updates of this variable
     //private set to be able to change this var only inside this class
     //
-    @Published private(set) var recipeTitle: String = ""
+    @Published private(set) var recipeTitle: String = "empty"
     private let service: RecipeService
     
     //Using the protocol not the Implementation = dependency injection
@@ -31,10 +31,14 @@ final class RecipeViewModelImpl: RecipeViewModel {
     
     func getRecipeTitle() async {
         do {
-            self.recipeTitle = try await service.fetch()
+            self.recipeTitle = try await service.fetch().name
         } catch {
-            print(error)
+            //fatalError(error.localizedDescription)
+            print("error in fetch: \(error)")
         }
     }
     
 }
+
+
+

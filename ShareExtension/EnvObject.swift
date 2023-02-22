@@ -7,14 +7,14 @@
 //
 
 import Foundation
-import OpenAISwift
-//Class used to share data between UIkit ShareViewController (extension) and SwiftUI (Form sheet)
+//import OpenAISwift
+//Class used to share data between UIkit ShareViewController (extension) and SwiftUI (RecipeShareSheetScreen)
 @MainActor class EnvObject: ObservableObject {
     
     
-    @Published var data = "empty url for now"
-    @Published var recipeDetails = "empty for now"
-    private var client: OpenAISwift?
+  
+    @Published var recipeURL = "empty for now"
+    //private var client: OpenAISwift?
     
     
     //A connection with uikit safari extension to call uikit function in swiftui view telling safari extension work is completed
@@ -35,14 +35,14 @@ import OpenAISwift
                 print("view controller is not connected")
             }
         }
-
-    init(myvar: String) {
-
-        self.data = myvar
-
-    
-        
-    }
+//
+//    init(myvar: String) {
+//
+//        //self.data = myvar
+//
+//    
+//        
+//    }
     
     
    

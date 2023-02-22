@@ -17,8 +17,8 @@
 		12797C76290D947200CC559E /* GetURL.js in Resources */ = {isa = PBXBuildFile; fileRef = 12797C74290D947200CC559E /* GetURL.js */; };
 		12797C77290D982500CC559E /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C65290D941B00CC559E /* ShareViewController.swift */; };
 		12797C78290D98BC00CC559E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C53290D93F700CC559E /* ContentView.swift */; };
-		12797C7D290DAB5000CC559E /* RecipeDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C7C290DAB5000CC559E /* RecipeDetailsScreen.swift */; };
-		12797C7E290DAB5000CC559E /* RecipeDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C7C290DAB5000CC559E /* RecipeDetailsScreen.swift */; };
+		12797C7D290DAB5000CC559E /* RecipeShareSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C7C290DAB5000CC559E /* RecipeShareSheetScreen.swift */; };
+		12797C7E290DAB5000CC559E /* RecipeShareSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C7C290DAB5000CC559E /* RecipeShareSheetScreen.swift */; };
 		12797C80290E6BEA00CC559E /* EnvObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C7F290E6BEA00CC559E /* EnvObject.swift */; };
 		12797C81290E6BEA00CC559E /* EnvObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C7F290E6BEA00CC559E /* EnvObject.swift */; };
 		12797C832910DFFF00CC559E /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C822910DFFF00CC559E /* SpeechRecognition.swift */; };
@@ -33,6 +33,10 @@
 		12797C992913D50500CC559E /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C972913D50500CC559E /* ScannerView.swift */; };
 		12797C9B2913DDBA00CC559E /* TexrRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C9A2913DDBA00CC559E /* TexrRecognizer.swift */; };
 		12797C9C2913DDBA00CC559E /* TexrRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C9A2913DDBA00CC559E /* TexrRecognizer.swift */; };
+		128A751729A3C1B100423D41 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A751629A3C1B100423D41 /* Recipe.swift */; };
+		128A751829A3C1B100423D41 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A751629A3C1B100423D41 /* Recipe.swift */; };
+		128A751A29A3C22E00423D41 /* VideoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A751929A3C22E00423D41 /* VideoURL.swift */; };
+		128A751B29A3C22E00423D41 /* VideoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128A751929A3C22E00423D41 /* VideoURL.swift */; };
 		128B43B82996B8F000F1F268 /* YouTubeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43B72996B8F000F1F268 /* YouTubeModalView.swift */; };
 		128B43B92996B8F000F1F268 /* YouTubeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43B72996B8F000F1F268 /* YouTubeModalView.swift */; };
 		128B43BE2996B97D00F1F268 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43BA2996B97D00F1F268 /* StepView.swift */; };
@@ -47,6 +51,12 @@
 		128B43C82996B9F400F1F268 /* StepsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43C62996B9F400F1F268 /* StepsScreen.swift */; };
 		128B43CC2997F01D00F1F268 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43CB2997F01D00F1F268 /* RecipeViewModel.swift */; };
 		128B43CD2997F01D00F1F268 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43CB2997F01D00F1F268 /* RecipeViewModel.swift */; };
+		128B43E42998DA4A00F1F268 /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43E32998DA4A00F1F268 /* YouTubeView.swift */; };
+		128B43E52998DA4A00F1F268 /* YouTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43E32998DA4A00F1F268 /* YouTubeView.swift */; };
+		128B43E72998DAB400F1F268 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 128B43E62998DAB400F1F268 /* YouTubePlayerKit */; };
+		128B43E92998DC0C00F1F268 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 128B43E82998DC0C00F1F268 /* YouTubePlayerKit */; };
+		128B43EB2998FC4F00F1F268 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43EA2998FC4F00F1F268 /* VideoPlayerView.swift */; };
+		128B43EC2998FC4F00F1F268 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B43EA2998FC4F00F1F268 /* VideoPlayerView.swift */; };
 		12BBA24B298825BA0056A6CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12797C55290D93F800CC559E /* Assets.xcassets */; };
 		12BBA250298842F00056A6CF /* FiraSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12BBA24F298842F00056A6CF /* FiraSans-Thin.ttf */; };
 		12BBA251298842F00056A6CF /* FiraSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12BBA24F298842F00056A6CF /* FiraSans-Thin.ttf */; };
@@ -104,8 +114,6 @@
 		12BBA2AF298C35920056A6CF /* CodeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBA2AD298C35920056A6CF /* CodeExtensions.swift */; };
 		12BBA2B1298C443E0056A6CF /* RecipesFoldersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBA2B0298C443E0056A6CF /* RecipesFoldersScreen.swift */; };
 		12BBA2B2298C443E0056A6CF /* RecipesFoldersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBA2B0298C443E0056A6CF /* RecipesFoldersScreen.swift */; };
-		12CC2F36297E83A6004A3556 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12CC2F35297E83A6004A3556 /* OpenAISwift */; };
-		12CC2F39297E8431004A3556 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12CC2F38297E8431004A3556 /* OpenAISwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +150,7 @@
 		12797C65290D941B00CC559E /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		12797C6A290D941B00CC559E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12797C74290D947200CC559E /* GetURL.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = GetURL.js; sourceTree = "<group>"; };
-		12797C7C290DAB5000CC559E /* RecipeDetailsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailsScreen.swift; sourceTree = "<group>"; };
+		12797C7C290DAB5000CC559E /* RecipeShareSheetScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeShareSheetScreen.swift; sourceTree = "<group>"; };
 		12797C7F290E6BEA00CC559E /* EnvObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvObject.swift; sourceTree = "<group>"; };
 		12797C822910DFFF00CC559E /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
 		12797C852910E29000CC559E /* SwiftUI-with-Share-extension-2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SwiftUI-with-Share-extension-2-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -151,6 +159,8 @@
 		12797C912913CFEE00CC559E /* ScanRecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRecipeData.swift; sourceTree = "<group>"; };
 		12797C972913D50500CC559E /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		12797C9A2913DDBA00CC559E /* TexrRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexrRecognizer.swift; sourceTree = "<group>"; };
+		128A751629A3C1B100423D41 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		128A751929A3C22E00423D41 /* VideoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoURL.swift; sourceTree = "<group>"; };
 		128B43B72996B8F000F1F268 /* YouTubeModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YouTubeModalView.swift; path = ../YouTubeModalView.swift; sourceTree = "<group>"; };
 		128B43BA2996B97D00F1F268 /* StepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 		128B43BB2996B97D00F1F268 /* ingredientsPopoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ingredientsPopoverView.swift; sourceTree = "<group>"; };
@@ -158,6 +168,8 @@
 		128B43BD2996B97D00F1F268 /* PageIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageIndicatorView.swift; sourceTree = "<group>"; };
 		128B43C62996B9F400F1F268 /* StepsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsScreen.swift; sourceTree = "<group>"; };
 		128B43CB2997F01D00F1F268 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		128B43E32998DA4A00F1F268 /* YouTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeView.swift; sourceTree = "<group>"; };
+		128B43EA2998FC4F00F1F268 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		12BBA24F298842F00056A6CF /* FiraSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-Thin.ttf"; sourceTree = "<group>"; };
 		12BBA2532988431B0056A6CF /* FiraSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		12BBA2542988431B0056A6CF /* FiraSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraSans-Black.ttf"; sourceTree = "<group>"; };
@@ -194,7 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12CC2F36297E83A6004A3556 /* OpenAISwift in Frameworks */,
+				128B43E72998DAB400F1F268 /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12CC2F39297E8431004A3556 /* OpenAISwift in Frameworks */,
+				128B43E92998DC0C00F1F268 /* YouTubePlayerKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +276,7 @@
 		12797C50290D93F700CC559E /* SwiftUI with Share extension 2 */ = {
 			isa = PBXGroup;
 			children = (
+				128B43E12998D5D300F1F268 /* YouTube */,
 				12BBA2AB298C324D0056A6CF /* SwiftUI with Share extension 2.entitlements */,
 				125A36202994E12000A47743 /* Scan Recipe */,
 				125A361C29943FB800A47743 /* Start Cooking */,
@@ -319,6 +332,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		128B43E12998D5D300F1F268 /* YouTube */ = {
+			isa = PBXGroup;
+			children = (
+				128B43E32998DA4A00F1F268 /* YouTubeView.swift */,
+				128B43EA2998FC4F00F1F268 /* VideoPlayerView.swift */,
+			);
+			path = YouTube;
+			sourceTree = "<group>";
+		};
 		12BBA252298843000056A6CF /* Custom Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,7 +378,7 @@
 		12BBA292298C11ED0056A6CF /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				12797C7C290DAB5000CC559E /* RecipeDetailsScreen.swift */,
+				12797C7C290DAB5000CC559E /* RecipeShareSheetScreen.swift */,
 				12BBA2B0298C443E0056A6CF /* RecipesFoldersScreen.swift */,
 			);
 			path = Screen;
@@ -365,8 +387,10 @@
 		12BBA296298C12D50056A6CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				128A751629A3C1B100423D41 /* Recipe.swift */,
 				12BBA293298C12B20056A6CF /* Step.swift */,
 				12BBA297298C12E80056A6CF /* Ingredient.swift */,
+				128A751929A3C22E00423D41 /* VideoURL.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -440,7 +464,7 @@
 			);
 			name = "Recipe Jar";
 			packageProductDependencies = (
-				12CC2F35297E83A6004A3556 /* OpenAISwift */,
+				128B43E62998DAB400F1F268 /* YouTubePlayerKit */,
 			);
 			productName = "SwiftUI with Share extension 2";
 			productReference = 12797C4E290D93F700CC559E /* Recipe Jar.app */;
@@ -460,7 +484,7 @@
 			);
 			name = ShareExtension;
 			packageProductDependencies = (
-				12CC2F38297E8431004A3556 /* OpenAISwift */,
+				128B43E82998DC0C00F1F268 /* YouTubePlayerKit */,
 			);
 			productName = ShareExtension;
 			productReference = 12797C63290D941B00CC559E /* ShareExtension.appex */;
@@ -494,7 +518,7 @@
 			);
 			mainGroup = 12797C45290D93F700CC559E;
 			packageReferences = (
-				12CC2F34297E83A6004A3556 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				128B43E22998D90600F1F268 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 			);
 			productRefGroup = 12797C4F290D93F700CC559E /* Products */;
 			projectDirPath = "";
@@ -579,8 +603,11 @@
 				12BBA2B1298C443E0056A6CF /* RecipesFoldersScreen.swift in Sources */,
 				12797C77290D982500CC559E /* ShareViewController.swift in Sources */,
 				12797C872912A88800CC559E /* SharedFunctions.swift in Sources */,
+				128A751729A3C1B100423D41 /* Recipe.swift in Sources */,
 				12BBA2AE298C35920056A6CF /* CodeExtensions.swift in Sources */,
-				12797C7D290DAB5000CC559E /* RecipeDetailsScreen.swift in Sources */,
+				12797C7D290DAB5000CC559E /* RecipeShareSheetScreen.swift in Sources */,
+				128B43E42998DA4A00F1F268 /* YouTubeView.swift in Sources */,
+				128A751A29A3C22E00423D41 /* VideoURL.swift in Sources */,
 				128B43C22996B97D00F1F268 /* CustomPageView.swift in Sources */,
 				12BBA28E29896B580056A6CF /* EditableListView.swift in Sources */,
 				128B43B82996B8F000F1F268 /* YouTubeModalView.swift in Sources */,
@@ -592,6 +619,7 @@
 				12797C52290D93F700CC559E /* SwiftUI_with_Share_extension_2App.swift in Sources */,
 				12BBA2A2298C22F30056A6CF /* CustomColor.swift in Sources */,
 				12BBA298298C12E80056A6CF /* Ingredient.swift in Sources */,
+				128B43EB2998FC4F00F1F268 /* VideoPlayerView.swift in Sources */,
 				12797C832910DFFF00CC559E /* SpeechRecognition.swift in Sources */,
 				12797C982913D50500CC559E /* ScannerView.swift in Sources */,
 				12BBA294298C12B20056A6CF /* Step.swift in Sources */,
@@ -613,8 +641,11 @@
 				12BBA2B2298C443E0056A6CF /* RecipesFoldersScreen.swift in Sources */,
 				12797C78290D98BC00CC559E /* ContentView.swift in Sources */,
 				12797C8E2913CAF500CC559E /* ScanRecipeView.swift in Sources */,
+				128A751829A3C1B100423D41 /* Recipe.swift in Sources */,
 				12BBA2AF298C35920056A6CF /* CodeExtensions.swift in Sources */,
 				12797C882912A88800CC559E /* SharedFunctions.swift in Sources */,
+				128B43E52998DA4A00F1F268 /* YouTubeView.swift in Sources */,
+				128A751B29A3C22E00423D41 /* VideoURL.swift in Sources */,
 				128B43C32996B97D00F1F268 /* CustomPageView.swift in Sources */,
 				12797C66290D941B00CC559E /* ShareViewController.swift in Sources */,
 				128B43B92996B8F000F1F268 /* YouTubeModalView.swift in Sources */,
@@ -626,8 +657,9 @@
 				12BBA290298C0F1D0056A6CF /* SwiftUI_with_Share_extension_2App.swift in Sources */,
 				12BBA2A3298C22F30056A6CF /* CustomColor.swift in Sources */,
 				12BBA299298C12E80056A6CF /* Ingredient.swift in Sources */,
+				128B43EC2998FC4F00F1F268 /* VideoPlayerView.swift in Sources */,
 				12797C842910DFFF00CC559E /* SpeechRecognition.swift in Sources */,
-				12797C7E290DAB5000CC559E /* RecipeDetailsScreen.swift in Sources */,
+				12797C7E290DAB5000CC559E /* RecipeShareSheetScreen.swift in Sources */,
 				12BBA295298C12B20056A6CF /* Step.swift in Sources */,
 				12797C81290E6BEA00CC559E /* EnvObject.swift in Sources */,
 				12BBA2A9298C24750056A6CF /* LoadingView.swift in Sources */,
@@ -916,26 +948,26 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		12CC2F34297E83A6004A3556 /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+		128B43E22998D90600F1F268 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		12CC2F35297E83A6004A3556 /* OpenAISwift */ = {
+		128B43E62998DAB400F1F268 /* YouTubePlayerKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 12CC2F34297E83A6004A3556 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
-			productName = OpenAISwift;
+			package = 128B43E22998D90600F1F268 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
 		};
-		12CC2F38297E8431004A3556 /* OpenAISwift */ = {
+		128B43E82998DC0C00F1F268 /* YouTubePlayerKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 12CC2F34297E83A6004A3556 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
-			productName = OpenAISwift;
+			package = 128B43E22998D90600F1F268 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

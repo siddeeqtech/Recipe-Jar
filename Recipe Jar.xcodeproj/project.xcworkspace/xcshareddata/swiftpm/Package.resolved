@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "openaiswift",
+      "identity" : "youtubeplayerkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/adamrushy/OpenAISwift",
+      "location" : "https://github.com/SvenTiigi/YouTubePlayerKit.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "104cf9d8660290130e83eaa059f92c6ceadd533d"
+        "revision" : "40f9c331269a9b9461a5f7d4fd594865d9b4f62f",
+        "version" : "1.3.0"
       }
     }
   ],

@@ -24,7 +24,7 @@ struct StepView: View {
                         // It will consume no vertical space.
                         Text("")
                             .fixedSize(horizontal: false, vertical: true)
-                        Text(step.title)
+                        Text(step.name)
                               .fixedSize(horizontal: false, vertical: true)
                     }
                 }
@@ -48,6 +48,6 @@ struct StepView: View {
 
 struct StepView_Previews: PreviewProvider {
     static var previews: some View {
-        StepView(step: Step(title: "abcd abd abbcd", order: 11))
+        StepView(step: Step(name: "step 404", order: 1))
     }
 }

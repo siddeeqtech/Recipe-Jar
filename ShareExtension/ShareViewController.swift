@@ -1,9 +1,3 @@
-//
-
-//
-
-
-
 
 //Extension View controller responsible for getting recpie's title,url and image url using a simple javascript file named GetURL
 //Web scrapping and string opertations are applied here then sent to SwiftUI sheet through an observable object (type: EnvObject) which is reveived by an obsereved object in RecipeDetailsView
@@ -12,14 +6,12 @@ import UIKit
 import Social
 import MobileCoreServices
 import SwiftUI
-import OpenAISwift
+//import OpenAISwift
 
 class CustomShareViewController: UIViewController {
-    var urlString2:String = "empty"
-    var htmlContents:String = ""
-    var recipeURL:String = ""
-    var envModel = EnvObject(myvar:"empty")
-    var client: OpenAISwift?
+
+    var envModel = EnvObject()
+    //var client: OpenAISwift?
    
     override func viewDidAppear(_ animated: Bool) {
      super.viewDidAppear(true)
@@ -48,10 +40,10 @@ class CustomShareViewController: UIViewController {
         
         //Connecting our EnvObject (ObservableObject) with CustomShareViewController(UIKit view) in order to be able to share data (Recpie URL) with swiftui view and call uikit functions from swiftUI view
         //We need to call  UIKit functions cancelAction() and doneAction() from swiftUI View to tell safari extension we are done and let the user be back to safari
+        //rest of connection is in openRecipeSheet
         envModel.uIViewController = self
-        let controller = UIHostingController(rootView:RecipeDetailsScreen(model:self.envModel))
-        present(controller, animated: true)
-        getURL()
+        openRecipeSheet(urlString: getURL())
+      //  getURL()
         //openRecipeSheet(recipeDetails: "fakeURL",folders: folders)
    
         
@@ -97,9 +89,7 @@ class CustomShareViewController: UIViewController {
                        let urlString = results["URL"] as? String,
                        let url = NSURL(string: urlString),let title = results["title"] as? String {
                        
-                        //self.getHtmlContents(url: urlString)
-                        self.recipeURL = urlString
-                        self.urlString2 = urlString
+                        self.openRecipeSheet(urlString: urlString)
                         //send it to firebase
                         //self.writeReading(url: urlString)
                         print("my url is \(urlString) and title is \(title)")
@@ -130,9 +120,11 @@ class CustomShareViewController: UIViewController {
 //        }
 //    }
     
-    func openRecipeSheet(recipeDetails:String){
-        envModel = EnvObject(myvar:recipeDetails)
-        
+    func openRecipeSheet(urlString:String){
+       
+        self.envModel.recipeURL = urlString
+        let controller = UIHostingController(rootView:RecipeShareSheetScreen(model:self.envModel))
+        self.present(controller, animated: true)
         
    
         
@@ -159,23 +151,23 @@ class CustomShareViewController: UIViewController {
     
     //chatGPT
     //Create client
-    func setup() {
-         client = OpenAISwift(authToken: "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")
-    }
+//    func setup() {
+//         client = OpenAISwift(authToken: "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")
+//    }
     //Send request to the ChatGPT API
-    func send(recipeURL: String, completion: @escaping (String) -> Void) {
-        //make the call
-        let command = "extract ingredients and steps of the recipe in this site \(recipeURL)"
-        client?.sendCompletion(with: command,maxTokens: 1000 ,completionHandler: { result in
-            switch result {
-            case .success(let model):
-               let output = model.choices.first?.text ?? "empty"
-                completion(output)
-            case .failure:
-                break
-            }
-        })
-    }
+//    func send(recipeURL: String, completion: @escaping (String) -> Void) {
+//        //make the call
+//        let command = "extract ingredients and steps of the recipe in this site \(recipeURL)"
+//        client?.sendCompletion(with: command,maxTokens: 1000 ,completionHandler: { result in
+//            switch result {
+//            case .success(let model):
+//               let output = model.choices.first?.text ?? "empty"
+//                completion(output)
+//            case .failure:
+//                break
+//            }
+//        })
+//    }
 }
 
 //Extension that uses URL session to download an image,Data(contentsOf:) method will download the contents of the url synchronously
