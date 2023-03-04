@@ -6,12 +6,28 @@
 //
 
 import Foundation
-struct Recipe {
+struct Recipe:Codable {
+//    let name: String
+//    let time: Int
+//    let pictureURL: String
+//    let videoURL: VideoURL
+//    let isEditorChoice: Bool
+//    let ingredients: [Ingredient]
+//    let steps: [Step]
+    
+    
     let name: String
-    let time: Int
-    let pictureURL: String
-    let videoURL: VideoURL
-    let isEditorChoice: Bool
-    let ingredients: [Ingredient]
-    let steps: [Step]
+        let time: Int
+        let pictureUrl: String
+        let videoUrl: VideoURL
+        let isEditorChoice: Bool
+        let ingredients: [Ingredient]
+        let steps: [Step]
+    
+    
 }
+
+
+
+
+

@@ -12,13 +12,23 @@ import MobileCoreServices
 
 //A protocol that force struts to have a title property to be disblayed in the EditableList with an id to make sure the forEach works properly
 protocol TitleProtocol {
-    var id:UUID {get set}
+    //var id:UUID? {get set}
     var name: String { get  set }
-    var order: Int { get  set }
+    var orderID: Int { get  set }
     init(name:String,order:Int,quantity:Double,unit:String)
+   
 }
 
-struct EditableListView<Element: TitleProtocol,Element2:TitleProtocol>: View {
+protocol TitleProtocol2 {
+    //var id:UUID? {get set}
+    var name: String { get  set }
+    var orderID: Int { get  set }
+    init(name:String,order:Int)
+}
+
+
+
+struct EditableListView<Element: TitleProtocol,Element2:TitleProtocol2>: View {
     @State private var elements: [Element] //Genric type for array of objects in this case [Ingredients]
     @State private var elements2: [Element2] // [Steps]
     @State private var editMode = EditMode.active
@@ -50,7 +60,7 @@ struct EditableListView<Element: TitleProtocol,Element2:TitleProtocol>: View {
             //MARK: List1 (Ingredients)
             Section("Ingredients") {
                 
-                ForEach(elements,id: \.id) { item in
+                ForEach(elements,id: \.name) { item in
                     Text(item.name)
                 }
                 .onDelete(perform: onDelete)
@@ -80,7 +90,7 @@ struct EditableListView<Element: TitleProtocol,Element2:TitleProtocol>: View {
             //MARK: List2 (STEPS)
             Section("Steps") {
                 
-                ForEach(elements2,id: \.id) { item in
+                ForEach(elements2,id: \.name) { item in
                     Text(item.name)
                 }
                 .onDelete(perform: onDelete2)
@@ -191,7 +201,7 @@ struct EditableListView<Element: TitleProtocol,Element2:TitleProtocol>: View {
     private func addItemToElements2(cellText: inout String,listArray: inout [Element2]) {
         if !cellText.isEmpty {
             //add step to list of steps
-            listArray.append(Element2(name: cellText, order: -1,quantity: 0,unit: "no unit"))
+            listArray.append(Element2(name: cellText, order: -1))
             cellText = ""
         }
     }

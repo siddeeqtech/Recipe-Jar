@@ -9,15 +9,35 @@ import Foundation
 
 protocol RecipeViewModel: ObservableObject {
     func getRecipeTitle() async
+    func getRecipeDetails(recipeURL:String) async 
 }
 
 @MainActor //To perform on main thread in order to update our UI
 final class RecipeViewModelImpl: RecipeViewModel {
+    enum State {
+        case na
+        case loading
+        case success(data:Recipe)
+        case faild(error:Error)
+    }
+    
+    
+    @Published private(set) var state: State = .na
+
+    
+    
+    
     //@published to listen for the updates of this variable
     //private set to be able to change this var only inside this class
     //
     @Published private(set) var recipeTitle: String = "empty"
-    private let service: RecipeService
+    @Published private(set) var test: String = "empty"
+
+ //   @Published var recipeObj: Recipe
+    @Published var recipeUrl2: String = "empty"
+
+    
+    public let service: RecipeService
     
     //Using the protocol not the Implementation = dependency injection
     //injecting our object into this class so any object that conforms to RecipeService protocol can be injected into the viewModel
@@ -38,7 +58,50 @@ final class RecipeViewModelImpl: RecipeViewModel {
         }
     }
     
+    func getRecipeDetails(recipeURL:String) async {
+        
+//        print("222222222222222222222222222222")
+//
+        state = .loading
+        do {
+           var recipe = try await service.fetchRecipe(recipeURL: recipeURL)
+            self.state = .success(data: recipe)
+//            self.recipeTitle = recipeObj?.name ?? "fml"
+//            self.test = recipeObj?.ingredients.first?.name ?? "test"
+        } catch  {
+            print("error in fetch: \(error)")
+            self.state = .faild(error: error)
+
+        }
+//
+//
+        //call postRequest with username and password parameters
+//        service.postRequest(recipeURL: recipeURL) { (recipe, error) in
+//            if let recipe = recipe {
+//
+//                DispatchQueue.main.async {
+//                    self.recipeObj = recipe
+//                }
+//
+//                   // self.present(controller, animated: true)
+//
+//
+//
+//                //print(result)
+//
+//            } else if let error = error {
+//                print("errory: \(error.localizedDescription)")
+//            }
+//
+//
+//        }
+        
+        
+    }
+    
+    
+    
+ 
+    
+    
 }
-
-
-

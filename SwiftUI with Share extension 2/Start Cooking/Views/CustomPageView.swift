@@ -17,10 +17,13 @@ struct CustomPageView<Content: View>: View {
         GeometryReader { geometry in
             HStack(spacing: 0) {
                 self.content.frame(width: geometry.size.width)
+                    .background(.white)
             }
-            .frame(width: geometry.size.width, alignment: .topLeading)
+            //.frame(width: geometry.size.width, alignment: .topLeading)
             .offset(x: -CGFloat(self.currentIndex) * geometry.size.width)
+
             .offset(x: self.translation)
+
             .animation(.default, value: currentIndex)
                     .gesture(
                         DragGesture()//when drag gesture ends decides if user swipped left or right

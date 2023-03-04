@@ -9,7 +9,8 @@ import SwiftUI
 //import OpenAISwift
 //
 class CustomShareViewController: UIViewController {
-
+    private var vm = RecipeViewModelImpl(service: RecipeServiceImpl())
+    
     var envModel = EnvObject()
     //var client: OpenAISwift?
    
@@ -42,7 +43,27 @@ class CustomShareViewController: UIViewController {
         //We need to call  UIKit functions cancelAction() and doneAction() from swiftUI View to tell safari extension we are done and let the user be back to safari
         //rest of connection is in openRecipeSheet
         envModel.uIViewController = self
-        openRecipeSheet(urlString: getURL())
+      //  openRecipeSheet(urlString: getURL())
+        
+        
+        getURL { recipeURL, error in
+            
+            if let recipeURL = recipeURL {
+                print("success: \(recipeURL)")
+                self.envModel.recipeURL = recipeURL
+                let controller = UIHostingController(rootView:RecipeShareSheetScreen(model:self.envModel,recURL:recipeURL))
+                self.present(controller, animated: true)
+                
+              //  self.getRecipeDetails(recipeURL: recipeURL, controller: controller)
+            } else if let error = error {
+                print("errory: \(error.localizedDescription)")
+            }
+            
+            
+        }
+        
+        
+        
       //  getURL()
         //openRecipeSheet(recipeDetails: "fakeURL",folders: folders)
    
@@ -76,7 +97,7 @@ class CustomShareViewController: UIViewController {
     
     
     //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
-    private func getURL() -> String {
+    private func getURL(completion: @escaping (String?, Error?) -> Void) -> String {
         var urlString11 = "empty content"
         let extensionItem = extensionContext?.inputItems.first as! NSExtensionItem
         let itemProvider = extensionItem.attachments?.first as! NSItemProvider
@@ -88,8 +109,15 @@ class CustomShareViewController: UIViewController {
                     if let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                        let urlString = results["URL"] as? String,
                        let url = NSURL(string: urlString),let title = results["title"] as? String {
-                       
-                        self.openRecipeSheet(urlString: urlString)
+                     
+                        
+                        
+                        completion(urlString ,nil)
+                        
+                        
+                        
+                        
+                        //self.openRecipeSheet(urlString: urlString)
                         //send it to firebase
                         //self.writeReading(url: urlString)
                         print("my url is \(urlString) and title is \(title)")
@@ -98,6 +126,8 @@ class CustomShareViewController: UIViewController {
             })
         } else {
             print("error")
+            
+            
         }
         
         return urlString11
@@ -121,14 +151,20 @@ class CustomShareViewController: UIViewController {
 //    }
     
     func openRecipeSheet(urlString:String){
-       
+       print("ho\(urlString)")
         self.envModel.recipeURL = urlString
-        let controller = UIHostingController(rootView:RecipeShareSheetScreen(model:self.envModel))
+        let controller = UIHostingController(rootView:RecipeShareSheetScreen(model:self.envModel,recURL:urlString))
         self.present(controller, animated: true)
         
    
         
 
+        
+       
+        
+        
+        
+        
       //  let viewCtrl = UIHostingController(rootView: RecipeDetailsView(model: envModel,dismissAction: {self.dismiss( animated: true, completion: nil )}))
 //present(viewCtrl, animated: true)
        // self.navigationController?.pushViewController(viewCtrl, animated: true)
@@ -168,6 +204,9 @@ class CustomShareViewController: UIViewController {
 //            }
 //        })
 //    }
+    
+    
+  
 }
 
 //Extension that uses URL session to download an image,Data(contentsOf:) method will download the contents of the url synchronously

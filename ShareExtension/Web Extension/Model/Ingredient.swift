@@ -6,17 +6,26 @@
 //
 
 import Foundation
-struct Ingredient: Identifiable,TitleProtocol {
+struct Ingredient:TitleProtocol,Codable {
     init(name: String, order: Int, quantity: Double = 0.0, unit: String = "no unit") {
         self.name = name
-        self.order = order
+        self.orderID = order
         self.quantity = quantity
         self.unit = unit
+        //self.id = UUID()
     }
     
-    var id = UUID()
-    var order: Int
+    //var id:UUID?
+//    var orderID: Int
+//    var name: String
+//    let quantity: Double?
+//    let unit: String?
+    
+    
+    
     var name: String
-    let quantity: Double?
-    let unit: String?
+    var quantity: Double?
+    var unit: String?
+    var orderID: Int
+    
 }

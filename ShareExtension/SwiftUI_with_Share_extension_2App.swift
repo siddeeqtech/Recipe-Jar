@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_with_Share_extension_2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

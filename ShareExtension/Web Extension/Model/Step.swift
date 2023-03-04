@@ -7,18 +7,25 @@
 
 import Foundation
 
-struct Step: Identifiable,TitleProtocol {
-    init(name: String, order: Int, quantity: Double = 0.0, unit: String = "no unit") {
+struct Step:TitleProtocol2,Codable {
+    init(name: String, order: Int) {
         self.name = name
-        self.order = order
+        self.orderID = order
+       // self.id = UUID()
     }
     
    
-    var order:Int
-    var id = UUID()
+    var orderID:Int
+    //var id: UUID?
     var name: String
    
 }
+
+
+
+
+
+
 struct Welcome1:Decodable {
     let name: String
     

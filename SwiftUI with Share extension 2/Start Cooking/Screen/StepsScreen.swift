@@ -12,10 +12,11 @@ import UIKit
 
 struct StepsScreen: View {
     //@Binding var isShowing: Bool
-    @State private var currentPage = 0
 
-    
-  
+
+    @StateObject var vm = StartCookingViewModel()
+    @State var isStart : Bool = false
+
     
     @State private var currentIndex = 0
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>//For custom back button
@@ -42,24 +43,22 @@ struct StepsScreen: View {
         NavigationView{
             ZStack{
                 //MARK: Steps
-                CustomPageView(pageCount: steps.count, currentIndex: $currentPage){
+                CustomPageView(pageCount: steps.count, currentIndex: $vm.currentPage){
                     ForEach(0..<steps.count) { index in
-                       StepView(step: steps[index])
+                        StepView(step: steps[index])
                    }
                 }
                 .frame(maxWidth: .infinity,maxHeight: 550, alignment: .topLeading)//600 = 0.70422535 of screen height
                 
                 VStack(spacing: 50){
                     HStack {
-                        PageIndicatorView(numberOfPages: steps.count, currentIndex: currentPage)
+                        PageIndicatorView(numberOfPages: vm.steps.count, currentIndex: vm.currentPage)
                     }
                     .padding(.top,420)
                     HStack(spacing: -8){
                         Button{
                             print("back")
-                            if currentPage > 0 {
-                                currentPage -= 1
-                            }
+                            vm.backStep()
                             
                         } label: {
                             Image("backButton")
@@ -68,13 +67,11 @@ struct StepsScreen: View {
                         Button{
                             print("repeat")
                         } label: {
-                            Image("repeatButton")
+                            Image("RepeatButton")
                         }
                         Button{
                             print("nextButton")
-                            if currentPage < steps.count - 1 {
-                                currentPage += 1
-                            }
+                            vm.nextStep()
                             
                         } label: {
                             Image("nextButton")
@@ -86,7 +83,7 @@ struct StepsScreen: View {
                 }
             
             }
-            //MARK: navigatin buttons
+            //MARK: navigation buttons
             .toolbar{
                 
                 ToolbarItemGroup(placement: .navigationBarTrailing){
@@ -122,7 +119,12 @@ struct StepsScreen: View {
                         //YouTube button
                         Button{
                             print("YouTube button pressed")
-                            showYouTubeModal.toggle()
+                            
+                            withAnimation {
+                                showYouTubeModal.toggle()
+
+                            }
+                                
                         } label: {
                             Image("YouTubeButton")
                         }
@@ -137,6 +139,19 @@ struct StepsScreen: View {
                         //Voice commands button button
                         Button{
                             print("voiceCommandsButton pressed")
+                            
+                            isStart.toggle()
+                         
+                            if isStart {
+                                vm.requestPermission()
+                                print("start speech recgonizing")
+                                vm.startSpeechRecognization()
+                                //btnTitle = "Cancel"
+                            } else {
+                                //btnTitle = "Start"
+                                vm.cancelSpeechRecognization()
+                            }
+                            
                         } label: {
                             Image("voiceCommandsButton")
                         }
@@ -156,10 +171,18 @@ struct StepsScreen: View {
                 
             }
         }
+        
+        .alert(isPresented: $vm.hasError){
+            Alert(title: Text("Error"), message: Text(vm.error!), dismissButton: .default(Text("OK")))
+
+        }
+        
+        
         .overlay{
             youtubeBlurView
+                
         }
-        .animation(.easeInOut, value: showYouTubeModal)
+        //.animation(.easeInOut, value: showYouTubeModal)
         .transition(.move(edge: .bottom))
       
         //.navigationTitle("")
@@ -179,7 +202,11 @@ struct StepsScreen: View {
                     }
                 
                 YouTubeModalView(isShowing: $showYouTubeModal)
+                    .transition(.move(edge: .bottom))
                 .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .bottom)
+               
+//
+                
             }
             .ignoresSafeArea()
         }

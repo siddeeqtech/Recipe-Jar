@@ -5,127 +5,108 @@ import UIKit
 
 
 struct RecipeShareSheetScreen: View {
-    var dismiss: (() -> Void)?
+    // var dismiss: (() -> Void)?
     @StateObject private var vm = RecipeViewModelImpl(service: RecipeServiceImpl())
     
-    @ObservedObject var model: EnvObject
+    
+    // @ObservedObject var model2: Recipe
+    @ObservedObject var model: EnvObject //layer to communicate between swiftui sharesheet and uikit webextension
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>//To Dismiss SwiftUI ShareSheet
+    
+    @State var recURL:String
+    
+    @State var isErrorPresented = true
 
-    @State var isPresented = false
-
-    @State var ingredients = [Ingredient(name:"Ingredient 1",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 2",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 3",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 4",order:-1, quantity: -1, unit: "no unit"),Ingredient(name:"Ingredient 5",order:-1, quantity: -1, unit: "no unit")]//delete later
+    @State var isPresented = true
   
-    
-    
-
-    
-    @State var steps = [Step(name: "Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food StudiosHeat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip and cook until browned on the other side. Repeat with remaining batter. Dotdash Meredith Food Studios", order: 1),Step(name: "Your pancake will tell you when it's ready to flip. Wait until bubbles start to form on the top and the edges look dry and set. This will usually take about two to three minutes on each side", order: 2),Step(name: "Make a well", order: 3),Step(name: "Store leftover pancakes in an airtight container in the fridge for about a week. Refrain from adding toppings (such as syrup) until right before you serve them so the pancakes don't get soggy.", order: 4)]//delete later
     
     @State var folders = CodeExtensions.sharedDefault.array(forKey: "folders") as? [String] ?? ["folders are empty in web extension"]
     @State var nar = ""
     var body: some View {
-        NavigationView {
-             ZStack{//main zstack
-                 
-                   VStack(spacing: 0){
-                    //MARK: Recipe image
-                    VStack(spacing:0){
-                   RecipeImageView(imageName: "paleo-pancakes")
-                            //.background(Color.yellow)
+        
+        NavigationView{
+            //based on data state decide which view to show
+            switch vm.state {
+                
+            case .success(let data):
+                
+                NavigationLink(destination: RecipeImportScreen(data: data, model: model, presentationMode: _presentationMode, recURL: recURL), isActive:$isPresented) {Text("")}
+               
+                
+            case .loading:
+                LoadingView(model: model, text: "loading")
+                
+              
+            case .faild(let error):
+                
+                BlurView
+                
+                
+                    .alert(isPresented: $isErrorPresented){
+                        Alert(title: Text("Error"), message: Text(error.localizedDescription), dismissButton: .default(Text("OK")))
+
                     }
-  
-                       //MARK: Recipe Title
-                    HStack(spacing: 0){
-                       // Text("\(vm.recipeTitle)")
-                        Text(model.recipeURL)
-                        
-                        //.fontWeight(.thin)
-                            .font(Font.custom("FiraSans-Medium", size: 20))
-                            .foregroundColor(CustomColor.navy)
-                           // .fixedSize(horizontal: true, vertical: false)
+                
+            default:
+                BlurView
+//                    .alert(isPresented: $isErrorPresented){
+//                        Alert(title: Text("Error"), message: Text(""), dismissButton: .default(Text("OK")))
 //
-                            .padding(.top, 65)
-                            .padding(.bottom, 10)
-                    }
-                       
-                       
-//                    .task {
-//                        await vm.getRecipeTitle()
 //                    }
-                    
-                       //MARK: Prep and serving info
-                    HStack(spacing:40){
-                        
-                        HStack{
-                            Text("Prep time")
-                                .foregroundColor(CustomColor.navy)
-                            
-                            Text("10")
-                                .foregroundColor(CustomColor.yellow)
-                                .font(Font.custom("FiraSans-Medium", size: 20))
-                        }
-                        
-                        HStack{
-                            Text("Servings")
-                                .foregroundColor(CustomColor.navy)
-                            Text("1")
-                                .foregroundColor(CustomColor.yellow)
-                                .font(Font.custom("FiraSans-Medium", size: 20))
-                        }
-                        
-                    }
-                    .font(Font.custom("FiraSans-Medium", size: 15))
-                    //.padding(5)
-                       //MARK: List Ingredients & Steps
-                        VStack{
-                            EditableListView(items: ingredients, items2: steps)
-                        }
-                        .padding(.top,15)
-                     
-                }
-                }
-                .background(Color.init(uiColor: UIColor(red: 240/255, green: 240/255, blue: 246/255, alpha: 1)))
-         .toolbar {
-                                    ToolbarItem(placement: .navigationBarLeading) {
-                                        Button("Cancel") {
-                                            model.cancelAction()//calling a UIKit function to tell Web Extension to return user to Safari after canceling
-                                            self.presentationMode.wrappedValue.dismiss()
 
-                                        }
-                                    }
+                  
+                
+             
 
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Save") {
-                            model.doneAction()//calling a UIKit function to tell Web Extension to return user to Safari after saving
-                            print("Save tapped!")
-                        }
-                    }
-       }
-                .navigationTitle("Edit Recipe")
-                .navigationBarTitleDisplayMode(.inline)
+
+            }
+                
+        }
+        .navigationBarHidden(true)
+           
+        
+        
+        
+            .task{
+                //await vm.getRecipeTitle()
+                await vm.getRecipeDetails(recipeURL: model.recipeURL)
+                
+                
+                
+                
+                // print("fml \(s)")
+            }
+            .onDisappear(){//in case sharesheet was swiped down instead of of clicking on canel
+                model.cancelAction()//call cancel in UIKit(CustomShareSheet) to tell safari extension we are done
+            }
             
-                .task{
-                     await vm.getRecipeTitle()
-                   // print("fml \(s)")
-                }
-      
-        }
-        .onDisappear(){//in case sharesheet was swiped down instead of of clicking on canel
-            model.cancelAction()//call cancel in UIKit(CustomShareSheet) to tell safari extension we are done
-        }
+            
+            
+            
+            
+            
+            
+            
         
+   
         
 
+ 
+        
+        
     }
     
     
- 
+    
 }
+
+
+
 
 struct RecipeDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeShareSheetScreen( model: EnvObject())
-
+        RecipeShareSheetScreen( model: EnvObject(),recURL: "")
+        
     }
 }
 
@@ -135,3 +116,24 @@ struct RecipeDetailsView_Previews: PreviewProvider {
 
 
 
+
+struct ViewDidLoadModifier: ViewModifier {
+    @State private var viewDidLoad = false
+    let action: (() -> Void)?
+    
+    func body(content: Content) -> some View {
+        content
+            .onAppear {
+                if viewDidLoad == false {
+                    viewDidLoad = true
+                    action?()
+                }
+            }
+    }
+}
+
+extension View {
+    func onViewDidLoad(perform action: (() -> Void)? = nil) -> some View {
+        self.modifier(ViewDidLoadModifier(action: action))
+    }
+}

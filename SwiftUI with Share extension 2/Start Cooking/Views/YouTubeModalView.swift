@@ -86,18 +86,29 @@ struct YouTubeModalView: View {
         }
         
         .frame(height: 140)
-        .frame(maxWidth: .infinity)
-        
         .background(
-            
             ZStack {
-                RoundedRectangle (cornerRadius: 15)
-                Rectangle ()
-                    .frame (height: 140 / 2)
-            }
-                .foregroundColor (.white)
-      
+                           RoundedRectangle (cornerRadius: 15)
+                           Rectangle ()
+                               .frame (height: 0)
+                       }
+                           .foregroundColor (.white)
+        
         )
+     
+
+        
+        
+//        .background(
+//
+//            ZStack {
+//                RoundedRectangle (cornerRadius: 15)
+//                Rectangle ()
+//                    .frame (height: 140 / 2)
+//            }
+//                .foregroundColor (.blue)
+//
+//        )
         
     }
     

@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Speech
-struct ContentView: View {
+struct HomeView: View {
     //MARK: - Local Properties
         var audioEngine = AVAudioEngine()
         let speechReconizer : SFSpeechRecognizer? = SFSpeechRecognizer()
@@ -220,10 +220,11 @@ struct ContentView: View {
     }
     
     
-    func showAlert(title: String, message: String) {
+    func showAlert(title: String, message: String) -> Alert {
         errorTitle = title
         errorMessage = message
         showingError = true
+        return Alert(title: Text("Error"), message: Text(message), dismissButton: .cancel())
     }
     
     func cancelSpeechRecognization() {
@@ -246,6 +247,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }

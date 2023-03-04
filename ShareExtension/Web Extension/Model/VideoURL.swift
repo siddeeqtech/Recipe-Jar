@@ -6,7 +6,12 @@
 //
 
 import Foundation
-struct VideoURL {
+struct VideoURL:Codable {
     let youtubeLink: String
     let title: String
+    let image: String
+}
+
+struct WebsiteURL:Codable {
+    let websiteURL:String
 }

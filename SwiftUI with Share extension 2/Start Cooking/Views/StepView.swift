@@ -13,7 +13,7 @@ struct StepView: View {
         
         
         VStack(alignment: .leading) {
-            Text("Step \(step.order)")
+            Text("Step \(step.orderID)")
                 .font(Font.custom("FiraSans-Bold", size: 24))
                 .padding(.bottom, 10)//0.03053435 of screen width
             
