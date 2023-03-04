@@ -16,6 +16,7 @@ struct StepsScreen: View {
 
     @StateObject var vm = StartCookingViewModel()
     @State var isStart : Bool = false
+   // @State var isReading : Bool = false
 
     
     @State private var currentIndex = 0
@@ -45,7 +46,11 @@ struct StepsScreen: View {
                 //MARK: Steps
                 CustomPageView(pageCount: steps.count, currentIndex: $vm.currentPage){
                     ForEach(0..<steps.count) { index in
+           
+                        
                         StepView(step: steps[index])
+                         
+                    
                    }
                 }
                 .frame(maxWidth: .infinity,maxHeight: 550, alignment: .topLeading)//600 = 0.70422535 of screen height
@@ -59,6 +64,7 @@ struct StepsScreen: View {
                         Button{
                             print("back")
                             vm.backStep()
+                            vm.checkReading()
                             
                         } label: {
                             Image("backButton")
@@ -72,6 +78,8 @@ struct StepsScreen: View {
                         Button{
                             print("nextButton")
                             vm.nextStep()
+                            vm.checkReading()
+
                             
                         } label: {
                             Image("nextButton")
@@ -133,6 +141,10 @@ struct StepsScreen: View {
                         //Text to Speech button
                         Button{
                             print("textToSpeechButton")
+                            vm.isReading.toggle()
+                            vm.checkReading()
+
+                           
                         } label: {
                             Image("textToSpeechButton")
                         }
@@ -140,17 +152,17 @@ struct StepsScreen: View {
                         Button{
                             print("voiceCommandsButton pressed")
                             
-                            isStart.toggle()
-                         
-                            if isStart {
-                                vm.requestPermission()
-                                print("start speech recgonizing")
-                                vm.startSpeechRecognization()
-                                //btnTitle = "Cancel"
-                            } else {
-                                //btnTitle = "Start"
-                                vm.cancelSpeechRecognization()
-                            }
+                            vm.isSpeaking.toggle()
+//                            if isStart {
+//                                vm.requestPermission()
+//                                print("start speech recgonizing")
+//                                vm.startSpeechRecognization()
+//                            } else {
+//                                vm.cancelSpeechRecognization()
+//                            }
+                            
+                            vm.checkSpeaking()
+                            
                             
                         } label: {
                             Image("voiceCommandsButton")
