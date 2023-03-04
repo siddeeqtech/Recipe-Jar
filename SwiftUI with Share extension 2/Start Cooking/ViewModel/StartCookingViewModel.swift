@@ -26,6 +26,7 @@ final class StartCookingViewModel:ObservableObject{
     var request = SFSpeechAudioBufferRecognitionRequest()//object to perform speech recognition on live audio on specified buffer
     @State var task : SFSpeechRecognitionTask?//To control recognizer state (cancel it or)
 //    @Published var task  = SFSpeechRecognitionTask()//To control recognizer state (cancel it or)
+    var trueFormat: AVAudioFormat!
 
     @State private var errorTitle = ""
     @State private var errorMessage = ""
@@ -58,8 +59,16 @@ final class StartCookingViewModel:ObservableObject{
     
     
     
-    
-    
+    init(){
+        
+        
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: [ .defaultToSpeaker])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+        }
+    }
     func backStep(){
         if currentPage > 0 {
             currentPage -= 1
@@ -130,16 +139,25 @@ extension StartCookingViewModel {
         let recordingFormat = node.outputFormat(forBus: 0)
         //if recordingFormat.sampleRate == 0.0 { return }
         
+        
+        if recordingFormat.sampleRate == 0 {
+            trueFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 1)
+        } else {
+            trueFormat = recordingFormat
+        }
+        
+      //  audioEngine.connect(audioEngine.inputNode, to: audioEngine.mainMixerNode, format: recordingFormat)
         //To start recording, monitoring, and observing the output of audio input node
-        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, audioTime in
+        node.installTap(onBus: 0, bufferSize: 1024, format: trueFormat) { buffer, audioTime in
             //specify the buffer for the live audio
             
             self.request.append(buffer)
         }
         
         
-        audioEngine.prepare()
         
+        
+        audioEngine.prepare()
         do {
             try audioEngine.start()
             
@@ -163,6 +181,7 @@ extension StartCookingViewModel {
             setError(message: "Speech Recognizer is not available please try again later")
         }
         
+    //   try! AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: .mixWithOthers)
 
         
         // This resets the recognitionRequest so "...cannot be re-use..." error is avoided.
