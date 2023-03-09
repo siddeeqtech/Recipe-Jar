@@ -17,11 +17,14 @@ struct LoadingView: View {
     var body: some View {
         VStack(spacing: 8) {
             ProgressView()
+                .progressViewStyle(.circular)
+                
             Text (text)
             
           
             
         }
+        .background(.clear)
         
 //        .onAppear{
 //            vm.getRecipeDetails(recipeURL: model.recipeURL)

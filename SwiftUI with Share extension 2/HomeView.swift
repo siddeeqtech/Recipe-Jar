@@ -39,7 +39,19 @@ struct HomeView: View {
         
         NavigationView {
             VStack {
-              
+                NavigationLink{
+                    OnBoardScreen()
+                }label: {
+                    Text("Phone Auth")
+                }
+                
+                
+                NavigationLink{
+                    SMSVerificationScreen(viewModel: PhoneAuthViewModel())
+                }label: {
+                    Text("SMS Auth")
+                }
+                
                 NavigationLink{
                     StepsScreen()
                 }label: {
@@ -47,8 +59,8 @@ struct HomeView: View {
                 }
                 NavigationLink{
                     
-                    YouTubeView(youTubePlayer: "https://www.youtube.com/watch?v=QV4_kVIf4V4&ab_channel=iOSAcademy")
-                }label: {
+                    YouTubeView()
+                    .background(BlurView)                }label: {
                     Text("YouTube")
                 }
                 NavigationLink(destination: ScanRecipeView()) {

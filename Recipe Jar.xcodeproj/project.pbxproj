@@ -25,7 +25,19 @@
 		1246437629B2185A00ABB1EC /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246437429B2185A00ABB1EC /* BlurView.swift */; };
 		1246437A29B23B3000ABB1EC /* StartCookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246437929B23B3000ABB1EC /* StartCookingViewModel.swift */; };
 		1246437B29B23B3000ABB1EC /* StartCookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246437929B23B3000ABB1EC /* StartCookingViewModel.swift */; };
-		12797C52290D93F700CC559E /* SwiftUI_with_Share_extension_2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C51290D93F700CC559E /* SwiftUI_with_Share_extension_2App.swift */; };
+		1246437E29B4A2DC00ABB1EC /* OnBoardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246437D29B4A2DC00ABB1EC /* OnBoardScreen.swift */; };
+		1246437F29B4A2DC00ABB1EC /* OnBoardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246437D29B4A2DC00ABB1EC /* OnBoardScreen.swift */; };
+		1246438229B4D24800ABB1EC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246438129B4D24800ABB1EC /* CustomTextField.swift */; };
+		1246438329B4D24800ABB1EC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246438129B4D24800ABB1EC /* CustomTextField.swift */; };
+		1246438529B4D36300ABB1EC /* PhoneAuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246438429B4D36300ABB1EC /* PhoneAuthScreen.swift */; };
+		1246438629B4D36300ABB1EC /* PhoneAuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246438429B4D36300ABB1EC /* PhoneAuthScreen.swift */; };
+		1246438A29B5DAC800ABB1EC /* SMSVerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246438929B5DAC800ABB1EC /* SMSVerificationScreen.swift */; };
+		1246438B29B5DAC800ABB1EC /* SMSVerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246438929B5DAC800ABB1EC /* SMSVerificationScreen.swift */; };
+		1246438D29B5E2FE00ABB1EC /* PhoneAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246438C29B5E2FE00ABB1EC /* PhoneAuthViewModel.swift */; };
+		1246438E29B5E2FE00ABB1EC /* PhoneAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246438C29B5E2FE00ABB1EC /* PhoneAuthViewModel.swift */; };
+		1246439229B6121D00ABB1EC /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246439129B6121D00ABB1EC /* ButtonView.swift */; };
+		1246439329B6121D00ABB1EC /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246439129B6121D00ABB1EC /* ButtonView.swift */; };
+		12797C52290D93F700CC559E /* Whisk_APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C51290D93F700CC559E /* Whisk_APP.swift */; };
 		12797C54290D93F700CC559E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C53290D93F700CC559E /* HomeView.swift */; };
 		12797C56290D93F800CC559E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12797C55290D93F800CC559E /* Assets.xcassets */; };
 		12797C59290D93F800CC559E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12797C58290D93F800CC559E /* Preview Assets.xcassets */; };
@@ -113,7 +125,7 @@
 		12BBA28C29896A720056A6CF /* SwiftUI-with-Share-extension-2-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12797C852910E29000CC559E /* SwiftUI-with-Share-extension-2-Info.plist */; };
 		12BBA28E29896B580056A6CF /* EditableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBA28D29896B580056A6CF /* EditableListView.swift */; };
 		12BBA28F29896B580056A6CF /* EditableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBA28D29896B580056A6CF /* EditableListView.swift */; };
-		12BBA290298C0F1D0056A6CF /* SwiftUI_with_Share_extension_2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C51290D93F700CC559E /* SwiftUI_with_Share_extension_2App.swift */; };
+		12BBA290298C0F1D0056A6CF /* Whisk_APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12797C51290D93F700CC559E /* Whisk_APP.swift */; };
 		12BBA294298C12B20056A6CF /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBA293298C12B20056A6CF /* Step.swift */; };
 		12BBA295298C12B20056A6CF /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBA293298C12B20056A6CF /* Step.swift */; };
 		12BBA298298C12E80056A6CF /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBA297298C12E80056A6CF /* Ingredient.swift */; };
@@ -132,6 +144,12 @@
 		12BBA2B2298C443E0056A6CF /* RecipesFoldersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BBA2B0298C443E0056A6CF /* RecipesFoldersScreen.swift */; };
 		12DA87E829A75AC50057C5BD /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 12DA87E729A75AC50057C5BD /* YouTubePlayerKit */; };
 		12DA87EA29A75ACB0057C5BD /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 12DA87E929A75ACB0057C5BD /* YouTubePlayerKit */; };
+		12DB3BCB29B8AC2A00EB6EEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12DB3BCA29B8AC2A00EB6EEA /* GoogleService-Info.plist */; };
+		12DB3BCC29B8AC2A00EB6EEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12DB3BCA29B8AC2A00EB6EEA /* GoogleService-Info.plist */; };
+		12DB3BCF29B8ADD800EB6EEA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 12DB3BCE29B8ADD800EB6EEA /* FirebaseAuth */; };
+		12DB3BD129B8C98F00EB6EEA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 12DB3BD029B8C98F00EB6EEA /* FirebaseAuth */; };
+		12DB3BD429B8D24300EB6EEA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB3BD329B8D24300EB6EEA /* SplashScreen.swift */; };
+		12DB3BD529B8D24300EB6EEA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB3BD329B8D24300EB6EEA /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,8 +186,14 @@
 		1246437129B1E49800ABB1EC /* RecipeImportScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImportScreen.swift; sourceTree = "<group>"; };
 		1246437429B2185A00ABB1EC /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		1246437929B23B3000ABB1EC /* StartCookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartCookingViewModel.swift; sourceTree = "<group>"; };
+		1246437D29B4A2DC00ABB1EC /* OnBoardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardScreen.swift; sourceTree = "<group>"; };
+		1246438129B4D24800ABB1EC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		1246438429B4D36300ABB1EC /* PhoneAuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthScreen.swift; sourceTree = "<group>"; };
+		1246438929B5DAC800ABB1EC /* SMSVerificationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSVerificationScreen.swift; sourceTree = "<group>"; };
+		1246438C29B5E2FE00ABB1EC /* PhoneAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewModel.swift; sourceTree = "<group>"; };
+		1246439129B6121D00ABB1EC /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		12797C4E290D93F700CC559E /* Recipe Jar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe Jar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		12797C51290D93F700CC559E /* SwiftUI_with_Share_extension_2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_with_Share_extension_2App.swift; sourceTree = "<group>"; };
+		12797C51290D93F700CC559E /* Whisk_APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whisk_APP.swift; sourceTree = "<group>"; };
 		12797C53290D93F700CC559E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		12797C55290D93F800CC559E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12797C58290D93F800CC559E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -226,6 +250,8 @@
 		12BBA2AC298C34FB0056A6CF /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		12BBA2AD298C35920056A6CF /* CodeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeExtensions.swift; sourceTree = "<group>"; };
 		12BBA2B0298C443E0056A6CF /* RecipesFoldersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesFoldersScreen.swift; sourceTree = "<group>"; };
+		12DB3BCA29B8AC2A00EB6EEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		12DB3BD329B8D24300EB6EEA /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12DA87EA29A75ACB0057C5BD /* YouTubePlayerKit in Frameworks */,
+				12DB3BCF29B8ADD800EB6EEA /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12DA87E829A75AC50057C5BD /* YouTubePlayerKit in Frameworks */,
+				12DB3BD129B8C98F00EB6EEA /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +364,44 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		1246438029B4A2E200ABB1EC /* Phone Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1246437D29B4A2DC00ABB1EC /* OnBoardScreen.swift */,
+				1246438429B4D36300ABB1EC /* PhoneAuthScreen.swift */,
+				1246438929B5DAC800ABB1EC /* SMSVerificationScreen.swift */,
+				1246438F29B5E3B900ABB1EC /* ViewModel */,
+				1246439029B6120300ABB1EC /* Views */,
+				12DB3BD329B8D24300EB6EEA /* SplashScreen.swift */,
+			);
+			path = "Phone Auth";
+			sourceTree = "<group>";
+		};
+		1246438829B5DA1700ABB1EC /* Recipe Categories */ = {
+			isa = PBXGroup;
+			children = (
+				12BBA2B0298C443E0056A6CF /* RecipesFoldersScreen.swift */,
+			);
+			path = "Recipe Categories";
+			sourceTree = "<group>";
+		};
+		1246438F29B5E3B900ABB1EC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1246438C29B5E2FE00ABB1EC /* PhoneAuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1246439029B6120300ABB1EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1246438129B4D24800ABB1EC /* CustomTextField.swift */,
+				1246439129B6121D00ABB1EC /* ButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		125A361C29943FB800A47743 /* Start Cooking */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +455,8 @@
 		12797C50290D93F700CC559E /* SwiftUI with Share extension 2 */ = {
 			isa = PBXGroup;
 			children = (
+				12DB3BCA29B8AC2A00EB6EEA /* GoogleService-Info.plist */,
+				1246438829B5DA1700ABB1EC /* Recipe Categories */,
 				123DF0FD29A6563B0081A52D /* Saved Recipes */,
 				123DF0F029A655190081A52D /* Recipes Folders */,
 				128B43E12998D5D300F1F268 /* YouTube Player */,
@@ -401,6 +469,7 @@
 				12797C55290D93F800CC559E /* Assets.xcassets */,
 				12797C57290D93F800CC559E /* Preview Content */,
 				12BBA2A4298C23320056A6CF /* Base */,
+				1246438029B4A2E200ABB1EC /* Phone Auth */,
 			);
 			path = "SwiftUI with Share extension 2";
 			sourceTree = "<group>";
@@ -419,7 +488,7 @@
 				12797C7F290E6BEA00CC559E /* EnvObject.swift */,
 				12BBA2AC298C34FB0056A6CF /* ShareExtension.entitlements */,
 				128B43C92997EFE100F1F268 /* Web Extension */,
-				12797C51290D93F700CC559E /* SwiftUI_with_Share_extension_2App.swift */,
+				12797C51290D93F700CC559E /* Whisk_APP.swift */,
 				12797C65290D941B00CC559E /* ShareViewController.swift */,
 				12797C74290D947200CC559E /* GetURL.js */,
 				12797C6A290D941B00CC559E /* Info.plist */,
@@ -495,7 +564,6 @@
 			children = (
 				12797C7C290DAB5000CC559E /* RecipeShareSheetScreen.swift */,
 				1246437129B1E49800ABB1EC /* RecipeImportScreen.swift */,
-				12BBA2B0298C443E0056A6CF /* RecipesFoldersScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -581,6 +649,7 @@
 			name = "Recipe Jar";
 			packageProductDependencies = (
 				12DA87E929A75ACB0057C5BD /* YouTubePlayerKit */,
+				12DB3BCE29B8ADD800EB6EEA /* FirebaseAuth */,
 			);
 			productName = "SwiftUI with Share extension 2";
 			productReference = 12797C4E290D93F700CC559E /* Recipe Jar.app */;
@@ -601,6 +670,7 @@
 			name = ShareExtension;
 			packageProductDependencies = (
 				12DA87E729A75AC50057C5BD /* YouTubePlayerKit */,
+				12DB3BD029B8C98F00EB6EEA /* FirebaseAuth */,
 			);
 			productName = ShareExtension;
 			productReference = 12797C63290D941B00CC559E /* ShareExtension.appex */;
@@ -635,6 +705,7 @@
 			mainGroup = 12797C45290D93F700CC559E;
 			packageReferences = (
 				12DA87E429A759C80057C5BD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+				12DB3BCD29B8ADD800EB6EEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 12797C4F290D93F700CC559E /* Products */;
 			projectDirPath = "";
@@ -660,6 +731,7 @@
 				12BBA273298843F10056A6CF /* FiraSans-ExtraBold.ttf in Resources */,
 				12BBA275298843F50056A6CF /* FiraSans-ExtraBoldItalic.ttf in Resources */,
 				12BBA281298844100056A6CF /* FiraSans-Medium.ttf in Resources */,
+				12DB3BCB29B8AC2A00EB6EEA /* GoogleService-Info.plist in Resources */,
 				12BBA284298844150056A6CF /* FiraSans-MediumItalic.ttf in Resources */,
 				12797C59290D93F800CC559E /* Preview Assets.xcassets in Resources */,
 				12797C56290D93F800CC559E /* Assets.xcassets in Resources */,
@@ -688,6 +760,7 @@
 				12BBA27C298844000056A6CF /* FiraSans-ExtraLightItalic.ttf in Resources */,
 				12BBA286298844190056A6CF /* FiraSans-SemiBold.ttf in Resources */,
 				12BBA282298844110056A6CF /* FiraSans-Medium.ttf in Resources */,
+				12DB3BCC29B8AC2A00EB6EEA /* GoogleService-Info.plist in Resources */,
 				12797C76290D947200CC559E /* GetURL.js in Resources */,
 				12BBA26C298843440056A6CF /* FiraSans-Black.ttf in Resources */,
 				12BBA27E298844080056A6CF /* FiraSans-Light.ttf in Resources */,
@@ -716,14 +789,18 @@
 				123DF0F329A655310081A52D /* FolderView.swift in Sources */,
 				128B43BE2996B97D00F1F268 /* StepView.swift in Sources */,
 				12797C8D2913CAF500CC559E /* ScanRecipeView.swift in Sources */,
+				1246439229B6121D00ABB1EC /* ButtonView.swift in Sources */,
 				1246437229B1E49800ABB1EC /* RecipeImportScreen.swift in Sources */,
 				12797C80290E6BEA00CC559E /* EnvObject.swift in Sources */,
 				12BBA29B298C151A0056A6CF /* RecipeImageView.swift in Sources */,
 				12BBA2B1298C443E0056A6CF /* RecipesFoldersScreen.swift in Sources */,
+				1246438D29B5E2FE00ABB1EC /* PhoneAuthViewModel.swift in Sources */,
 				123DF0F829A655920081A52D /* FolderModel.swift in Sources */,
 				12797C77290D982500CC559E /* ShareViewController.swift in Sources */,
 				12797C872912A88800CC559E /* SharedFunctions.swift in Sources */,
 				128A751729A3C1B100423D41 /* Recipe.swift in Sources */,
+				1246438229B4D24800ABB1EC /* CustomTextField.swift in Sources */,
+				12DB3BD429B8D24300EB6EEA /* SplashScreen.swift in Sources */,
 				12BBA2AE298C35920056A6CF /* CodeExtensions.swift in Sources */,
 				12797C7D290DAB5000CC559E /* RecipeShareSheetScreen.swift in Sources */,
 				128B43E42998DA4A00F1F268 /* YouTubeView.swift in Sources */,
@@ -733,13 +810,15 @@
 				123DF10829A74B790081A52D /* UIApllication.swift in Sources */,
 				12BBA28E29896B580056A6CF /* EditableListView.swift in Sources */,
 				128B43B82996B8F000F1F268 /* YouTubeModalView.swift in Sources */,
+				1246438A29B5DAC800ABB1EC /* SMSVerificationScreen.swift in Sources */,
+				1246438529B4D36300ABB1EC /* PhoneAuthScreen.swift in Sources */,
 				128B43C72996B9F400F1F268 /* StepsScreen.swift in Sources */,
 				12BBA29E298C1EA20056A6CF /* RecipeService.swift in Sources */,
 				128B43C42996B97D00F1F268 /* PageIndicatorView.swift in Sources */,
 				12797C922913CFEE00CC559E /* ScanRecipeData.swift in Sources */,
 				123DF10029A656510081A52D /* RecipeView.swift in Sources */,
 				12797C54290D93F700CC559E /* HomeView.swift in Sources */,
-				12797C52290D93F700CC559E /* SwiftUI_with_Share_extension_2App.swift in Sources */,
+				12797C52290D93F700CC559E /* Whisk_APP.swift in Sources */,
 				12BBA2A2298C22F30056A6CF /* CustomColor.swift in Sources */,
 				12BBA298298C12E80056A6CF /* Ingredient.swift in Sources */,
 				123DF10229A656510081A52D /* RecipesScreen.swift in Sources */,
@@ -747,6 +826,7 @@
 				12797C832910DFFF00CC559E /* SpeechRecognition.swift in Sources */,
 				12797C982913D50500CC559E /* ScannerView.swift in Sources */,
 				1246437529B2185A00ABB1EC /* BlurView.swift in Sources */,
+				1246437E29B4A2DC00ABB1EC /* OnBoardScreen.swift in Sources */,
 				12BBA294298C12B20056A6CF /* Step.swift in Sources */,
 				12797C9B2913DDBA00CC559E /* TexrRecognizer.swift in Sources */,
 				12BBA2A8298C24750056A6CF /* LoadingView.swift in Sources */,
@@ -763,14 +843,18 @@
 				123DF0F429A655310081A52D /* FolderView.swift in Sources */,
 				128B43BF2996B97D00F1F268 /* StepView.swift in Sources */,
 				12797C992913D50500CC559E /* ScannerView.swift in Sources */,
+				1246439329B6121D00ABB1EC /* ButtonView.swift in Sources */,
 				1246437329B1E49800ABB1EC /* RecipeImportScreen.swift in Sources */,
 				12797C932913CFEE00CC559E /* ScanRecipeData.swift in Sources */,
 				12BBA29C298C151A0056A6CF /* RecipeImageView.swift in Sources */,
 				12BBA2B2298C443E0056A6CF /* RecipesFoldersScreen.swift in Sources */,
+				1246438E29B5E2FE00ABB1EC /* PhoneAuthViewModel.swift in Sources */,
 				123DF0F929A655920081A52D /* FolderModel.swift in Sources */,
 				12797C78290D98BC00CC559E /* HomeView.swift in Sources */,
 				12797C8E2913CAF500CC559E /* ScanRecipeView.swift in Sources */,
 				128A751829A3C1B100423D41 /* Recipe.swift in Sources */,
+				1246438329B4D24800ABB1EC /* CustomTextField.swift in Sources */,
+				12DB3BD529B8D24300EB6EEA /* SplashScreen.swift in Sources */,
 				12BBA2AF298C35920056A6CF /* CodeExtensions.swift in Sources */,
 				12797C882912A88800CC559E /* SharedFunctions.swift in Sources */,
 				128B43E52998DA4A00F1F268 /* YouTubeView.swift in Sources */,
@@ -780,13 +864,15 @@
 				123DF10929A74B790081A52D /* UIApllication.swift in Sources */,
 				12797C66290D941B00CC559E /* ShareViewController.swift in Sources */,
 				128B43B92996B8F000F1F268 /* YouTubeModalView.swift in Sources */,
+				1246438B29B5DAC800ABB1EC /* SMSVerificationScreen.swift in Sources */,
+				1246438629B4D36300ABB1EC /* PhoneAuthScreen.swift in Sources */,
 				128B43C82996B9F400F1F268 /* StepsScreen.swift in Sources */,
 				12BBA29F298C1EA20056A6CF /* RecipeService.swift in Sources */,
 				128B43C52996B97D00F1F268 /* PageIndicatorView.swift in Sources */,
 				12BBA28F29896B580056A6CF /* EditableListView.swift in Sources */,
 				123DF10129A656510081A52D /* RecipeView.swift in Sources */,
 				12797C9C2913DDBA00CC559E /* TexrRecognizer.swift in Sources */,
-				12BBA290298C0F1D0056A6CF /* SwiftUI_with_Share_extension_2App.swift in Sources */,
+				12BBA290298C0F1D0056A6CF /* Whisk_APP.swift in Sources */,
 				12BBA2A3298C22F30056A6CF /* CustomColor.swift in Sources */,
 				12BBA299298C12E80056A6CF /* Ingredient.swift in Sources */,
 				123DF10329A656510081A52D /* RecipesScreen.swift in Sources */,
@@ -794,6 +880,7 @@
 				12797C842910DFFF00CC559E /* SpeechRecognition.swift in Sources */,
 				12797C7E290DAB5000CC559E /* RecipeShareSheetScreen.swift in Sources */,
 				1246437629B2185A00ABB1EC /* BlurView.swift in Sources */,
+				1246437F29B4A2DC00ABB1EC /* OnBoardScreen.swift in Sources */,
 				12BBA295298C12B20056A6CF /* Step.swift in Sources */,
 				12797C81290E6BEA00CC559E /* EnvObject.swift in Sources */,
 				12BBA2A9298C24750056A6CF /* LoadingView.swift in Sources */,
@@ -953,7 +1040,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.othmanshahrouri.SwiftUI-with-Share-extension-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.othmanshahrouri.Whisk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -989,7 +1076,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.othmanshahrouri.SwiftUI-with-Share-extension-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.othmanshahrouri.Whisk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1014,7 +1101,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.othmanshahrouri.SwiftUI-with-Share-extension-2.ShareExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.othmanshahrouri.Whisk.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1040,7 +1127,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.othmanshahrouri.SwiftUI-with-Share-extension-2.ShareExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.othmanshahrouri.Whisk.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1090,6 +1177,14 @@
 				version = 1.3.0;
 			};
 		};
+		12DB3BCD29B8ADD800EB6EEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 9.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1102,6 +1197,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 12DA87E429A759C80057C5BD /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
 			productName = YouTubePlayerKit;
+		};
+		12DB3BCE29B8ADD800EB6EEA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12DB3BCD29B8ADD800EB6EEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		12DB3BD029B8C98F00EB6EEA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12DB3BCD29B8ADD800EB6EEA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

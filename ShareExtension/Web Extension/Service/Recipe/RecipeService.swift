@@ -132,7 +132,7 @@ final class RecipeServiceImpl: RecipeService {
     func fetchRecipe(recipeURL: String) async throws -> Recipe {
        
         //declare parameter as a dictionary which contains string as key and value combination.
-        let parameters = ["websiteUrl": recipeURL]
+        let parameters = ["websiteUrl": recipeURL,"userID": "9839d06e-7617-4476-9adc-90e5e880a642"]
 
         //create the url with NSURL
         let url = URL(string: "http://www.whiskapps.com/whiskApp/webExtension/getRecipeInformation/")!

@@ -11,5 +11,5 @@ import SwiftUI
 struct CustomColor {
     static let navy = Color("navy")
     static let yellow = Color("yellow")
-  
+    static let purple = Color("AccentColor")
 }
