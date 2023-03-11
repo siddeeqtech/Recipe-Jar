@@ -51,25 +51,25 @@ Recipes Views:
 
 This is an ongoing teamwork project with the following roles:
 
-| Member Name      | Role                                       |
-|------------------|-----------------------------------------   |
-| Othman Shahrouri | UX,Swift,SwiftUI, Frontend and integration |
-| Nedine Rafid     | Frontend(SwiftUI), UI and UX               |
-| Shady Jaradat    | Backend (python Django)                    |
+| Member Name      | Role                                               |
+|------------------|----------------------------------------------------|
+| Othman Shahrouri | Swift(UIKit),SwiftUI, Frontend, integration and UX |
+| Nedine Rafid     | Frontend(SwiftUI), UI and UX                       |
+| Shady Jaradat    | Backend (python Django)                            |
 
 I have implented the following features:
 1. Safari Extension pulls the HTML off a recipe website and parses it
-2. OCR Scanner (Visionkit)
-3. Voice Commands (Speech)
-4. Text-To-Speech (Speech Synthesis)
-5. Video player (AVPlayer)
-
-The following features will be impelmented by me startting from 30/1/2023 and compeleted on 1/6/2023:
-1. Nearest stores (Core Location)
 2. Integration with the backend (Codable)
-3. Frontend (splitted between me and a colleague)
-4. Timer
-5. MVVM design pattern
+3. OCR Scanner (Visionkit)
+4. Voice Commands (Speech)
+5. Text-To-Speech (Speech Synthesis)
+6. Video player (AVPlayer)
+
+
+The following features will be impelmented by me and compeleted on 1/5/2023:
+1. Nearest stores (Core Location)
+2. Frontend (splitted between me and a colleague)
+3. Timer
 
 
 Recipe Jar will be completed 1/6/2023 until then feel free to ask me about any of the impelmented features. 
