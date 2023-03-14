@@ -39,6 +39,7 @@ Recipes Views:
 - Speech Synthesis
 - Visionkit
 - Core Animation
+- Async/Await
 - AVPlayer 
 - Codable
 - UserDefaults
